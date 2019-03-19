@@ -1,0 +1,9 @@
+  
+  <GridLayout  #bottomBar  row="1" verticalAlignment="bottom" backgroundColor="white" [visibility]="visible ? 'visible' : 'collapsed'"  rows="*" class="border-top p-t-10 p-b-8" columns="*,*,*,*,*,*">
+    <StackLayout  [col]="i" (tap)="onChangeIndex(i)" *ngFor='let item of bottomMenu; let i=index'>  
+      <!-- <Image [src]="imgSrc(item)" stretch="aspectFit" [height]="imgHeight" [width]="imgWidth"  horizontalAlignment="center"></Image> -->
+      <Label text="{{item.icon}}" class="fa f-25" horizontalAlignment="center" textWrap="true"></Label>
+      
+      <Label [text]="item.name" class="p-t-10 f-12" [ngClass]="{'active' : activeIndexValue == i, 'inactive' : activeIndexValue != i}" verticalAlignment="bottom" horizontalAlignment="center" textWrap="true"></Label>
+    </StackLayout>
+  </GridLayout> 
