@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 
@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
     
     currentPagerIndex = 5;
     latestReceivedIndex = 0;
-    items: any;
-    @ViewChild("pager") pager: any;
 
     constructor() {
         //
@@ -27,21 +25,12 @@ export class HomeComponent implements OnInit {
         //
     }
 
-    loadedImage($event) {
-        console.log(`loaded image ${JSON.stringify($event)}`);
-    }
-
     prevPage() {
-        // this.debugObj(this.pager);
-        // const newIndex = Math.max(0, this.currentPagerIndex - 1);
-        // this.currentPagerIndex = newIndex;
-        // this.latestReceivedIndex = newIndex;
+      //
     }
 
     nextPage() {
-        // const newIndex = Math.min(this.numItems - 1, this.currentPagerIndex + 1);
-        // this.currentPagerIndex = newIndex;
-        // this.latestReceivedIndex = newIndex;
+        //
     }
 
     onIndexChanged($event) {

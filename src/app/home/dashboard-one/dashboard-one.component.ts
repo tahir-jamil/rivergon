@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
-import * as platformModule from "tns-core-modules/platform";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "ns-dashboard-one",
@@ -31,7 +30,7 @@ export class DashboardOneComponent implements OnInit {
   }
 
   ngOnInit() {
-    // 
+    //
   }
 
 }
