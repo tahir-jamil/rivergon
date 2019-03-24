@@ -12,12 +12,12 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label class="action-bar-title" text="View Title"></Label>
+    <Label class="action-bar-title" [text]="title"></Label>
 </ActionBar>
 
 <GridLayout rows="*,auto" columns="">
-    <Pager #pager row="0" [itemTemplateSelector]="templateSelector" pagesCount="5" [items]="components"
-        [selectedIndex]="selectedIndex" (selectedIndexChange)="onIndexChanged($event)"
+    <Pager #pager row="0" [itemTemplateSelector]="templateSelector"  [items]="components"
+         (selectedIndexChange)="onIndexChanged($event)"
         backgroundColor="rgba(244,245,246,1)" class="m-t-6">
 
         <ng-template pagerTemplateKey="dashbaordOne" let-i="index" let-item="item">

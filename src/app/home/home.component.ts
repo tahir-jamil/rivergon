@@ -9,12 +9,14 @@ import * as app from "tns-core-modules/application";
 })
 export class HomeComponent implements OnInit {
 
+    title = "";
+
     components = [
         { component: "dashbaordOne" },
         { component: "dashbaordTwo" }
     ];
     
-    currentPagerIndex = 5;
+    currentPagerIndex = 0;
     latestReceivedIndex = 0;
 
     constructor() {
@@ -34,8 +36,26 @@ export class HomeComponent implements OnInit {
     }
 
     onIndexChanged($event) {
-        this.latestReceivedIndex = $event.newIndex;
+        this.latestReceivedIndex = $event.value;
+
+        switch (this.latestReceivedIndex) {
+            case 0:
+                {
+                    this.title = "Dashboard view";
+                }
+                break;
+            case 1:
+                {
+                    this.title = "Profile view";
+                }
+                break;
+        
+            default:
+                break;
+        }
     }
+
+
 
     pageChanged(index: number) {
         console.log(`pageChanged ${JSON.stringify(index)}`);
